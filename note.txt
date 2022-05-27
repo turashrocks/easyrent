@@ -1,0 +1,6 @@
+-User
+turah_admin_amplify
+-Access key ID: 
+AKIATA6GYTAIMUOJJOZO
+-Secret access key:
+kOwTdbU9a7+JplbzfRNJKeKp2i/86CV36JVr3WU4
