@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Home from './src/screens/Home';
 
-export default function App() {
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BottomTabNav from './src/navigation/BottomTabNavigator';
+
+import PostDetails from './src/screens/PostDetails';
+
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './src/aws-exports';
+
+function App() {
+  Amplify.configure(awsconfig);
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Welcome</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{
+        headerShown: false
+      }}>
+        <Stack.Screen name="Home" component={BottomTabNav}/>
+        <Stack.Screen name="PostDetails" component={PostDetails}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
+
