@@ -19,7 +19,9 @@ const styles = StyleSheet.create({
     borderRadius:30,
     paddingRight:10,
     paddingLeft:20,
-    marginBottom:20
+    marginBottom:20,
+    flexDirection:'row',
+    alignItems:'center'
   },
   postButton:{
     backgroundColor: colors.black,
